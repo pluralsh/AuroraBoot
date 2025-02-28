@@ -390,11 +390,6 @@ func (r *RawImage) createEFIPartitionImage() (string, error) {
 			internal.Log.Logger.Error().Err(err).Msg("failed to copy rpi firmware")
 			return "", err
 		}
-		err = r.copyShimOrGrub(tmpDirEfi, "grub")
-		if err != nil {
-			internal.Log.Logger.Error().Err(err).Msg("failed to copy grub")
-			return "", err
-		}
 	}
 
 	efiPartitionImage := v1.Image{
